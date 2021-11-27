@@ -1,7 +1,6 @@
-#include "Game.hh"
-#include "Constants.hh"
+#include "ComonHeaders.hh"
 
-Game::Game(/* args */)
+Game::Game()
 {
   window = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), GAME_NAME);
   event = new sf::Event();
@@ -11,8 +10,9 @@ Game::~Game()
 {
 }
 
-void Game::Run();
+void Game::Run()
 {
+    start();
     MainLoop();
 }
 
@@ -28,7 +28,37 @@ void Game::MainLoop()
       }
     }
 
+     InputHandle();
+     Update();
+     Render();
   }
 
-  return 0;
+
 }
+
+   void Game::Update()
+   {
+
+   }
+
+   void Game::start()
+   {
+
+   }
+
+   void Game::Render()
+   {
+       window->clear(sf::Color::Black);
+       Draw();
+       window->display();
+   }
+
+   void Game::Draw()
+   {
+
+   }
+
+   void InputHandle()
+   {
+
+   }

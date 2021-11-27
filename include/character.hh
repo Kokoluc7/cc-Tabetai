@@ -19,8 +19,8 @@ public:
   float scale, float width, float height,  int col, int row, sf::RenderWindow*& window);
   ~character();
 
-    void Update();
+    void Update()
     {
-      
+
     }
 };
