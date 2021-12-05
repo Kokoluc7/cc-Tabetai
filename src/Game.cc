@@ -1,9 +1,16 @@
 #include "ComonHeaders.hh"
+#include "character.hh"
+
+sf::RectangleShape* rectangle{new sf::RectangleShape(sf::Vector2f(100.f, 100.f))};
+character* character1{new character()};
 
 Game::Game()
 {
   window = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), GAME_NAME);
   event = new sf::Event();
+  gameClock = new sf::Clock();
+  character1 = new character(ASSETS_SPRITES, sf::Vector2f(100.f, 100.f), GAME_SCALE,
+  16, 16, 7, 0, 200.f, window);
 }
 
 Game::~Game()
@@ -28,6 +35,9 @@ void Game::MainLoop()
       }
     }
 
+     deltaTime = gameClock->getElapsedTime().asSeconds();
+     gameClock->restart(); 
+
      InputHandle();
      Update();
      Render();
@@ -38,6 +48,8 @@ void Game::MainLoop()
 
    void Game::Update()
    {
+     //std::cout << "deltaTime: " << deltaTime << std::endl;
+     character1->Update();
 
    }
 
@@ -55,10 +67,11 @@ void Game::MainLoop()
 
    void Game::Draw()
    {
+     //window->draw(*rectangle);
 
    }
 
    void InputHandle()
    {
-
+     character1->Movement(deltaTime);
    }

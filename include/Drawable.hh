@@ -12,8 +12,7 @@ protected:
   int col{}, row{};
   sf::Texture* texture;
 public:
-  Drawable(const char* textureUrl, sf::Vector2f position,
-   float scale, float width, float height, int col, int row);
+  Drawable(const char* textureUrl, sf::Vector2f position, float scale, float width, float height, int col, int row);
   ~Drawable();
 
   sf::Sprite* GetSprite() const;
