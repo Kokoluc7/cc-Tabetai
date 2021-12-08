@@ -17,7 +17,7 @@ private:
 
   std::ifstream* reader{};
 public:
-  Animation(const char* animationUrl, Drawable*& drawable);
+  Animation(float delay, int row, int startFrame, int endFrame, float width, float height, Drawable*& drawable);
   ~Animation();
   void Play(float& deltaTime);
 };

@@ -2,27 +2,24 @@
 #include<SFML/Graphics.hpp>
 #include<iostream>
 #include<string>
+#include "Rigidbody.hh"
+#include "GameObject.hh"
 
-class character
+class Character : public GameObject
 {
 private:
-  sf::Sprite* sprite{};
-  sf::Vector2f position{};
-  float scale{};
-  float width{};
-  float height{};
-  sf::Texture* texture;
-  std::string textureUrl;
-  sf::RenderWindow* window{};
+
+  float moveSpeed;
+
+  void Movement(float& deltaTime);
+  void FlipSprite();
+ 
 
 public:
-  character();
-  character(std::string textureUrl, sf::Vector2f position,
-  float scale, float width, float height,  int col, int row, sf::RenderWindow*& window);
-  ~character();
+  Character(const char* textureUrl, sf::Vector2f position, 
+  float scale, float width, float height, int col, int row, float moveSpeed, 
+  sf::RenderWindow*& window, b2World*& world);
+  ~Character();
 
-    void Update()
-    {
-
-    }
+  void Update(float& deltaTime) override;
 };

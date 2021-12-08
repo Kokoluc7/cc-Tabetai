@@ -1,5 +1,5 @@
-const unsigned int WINDOW_WIDTH{800};
-const unsigned int WINDOW_HEIGHT{800};
-const char* GAME_NAME{"Game Engine"};
-const char* ASSETS_SPRITES{"assets/Sprites.png"};
-const float* GAME_SCALE{4.f};
+const unsigned int WINDOW_WIDTH{1000};
+const unsigned int WINDOW_HEIGHT{1000};
+const char* GAME_NAME{"Tabetai"};
+const char* ASSETS_SPRITES{"../bin/assets/Sprites.png"};
+const float GAME_SCALE{4.f};

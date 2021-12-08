@@ -11,6 +11,7 @@ InputSystem::~InputSystem()
 sf::Vector2f InputSystem::GetAxis()
 {
    sf::Vector2f axis{};
+   
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) ||
    sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
    {
